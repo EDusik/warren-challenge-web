@@ -43,13 +43,13 @@ export default createGlobalStyle`
     margin: 4rem auto 4rem auto;
   }
 
-  @media (min-width: 1080px) {
+  @media (max-width: 1080px) {
     html {
       font-size: 93.75%;
     }
   }
 
-  @media (min-width: 720px) {
+  @media (max-width: 720px) {
     html {
       font-size: 87.5%;
     }
