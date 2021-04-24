@@ -58,8 +58,9 @@ export default createGlobalStyle`
   :root {
     --background: #F5F6FA;
     --primary: #E02B57;
-    --text: #2E2D33;
-    --border: #1C1B1F;
+    --title: #2E2D33;
+    --text: #757680;
+    --dark: #1C1B1F;
     --button: #2E2D33;
     --green: #1BBC58;
     --yellow: #FF9A0D;
