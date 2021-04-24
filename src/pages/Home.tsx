@@ -1,5 +1,7 @@
 import React from "react";
+
 import { Navbar } from "../components/Navbar/Navbar";
+import { Footer } from "../components/Footer/Footer";
 import { TableData } from "../components/TableData/TableData";
 
 export const Home: React.FC = () => {
@@ -7,6 +9,7 @@ export const Home: React.FC = () => {
 		<React.Fragment>
 			<Navbar />
 			<TableData />
+			<Footer />
 		</React.Fragment>
 	);
 };
