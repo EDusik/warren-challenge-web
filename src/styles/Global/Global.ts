@@ -38,9 +38,10 @@ export default createGlobalStyle`
   hr {
     color: var(--border);
     border-style: solid;
-    border-width: 2px;
-    max-width: 784px;
-    margin: 4rem auto 4rem auto;
+    border-width: 1px;
+    max-width: 100%;
+    border-radius: 10px;
+    margin: .5rem auto .5rem auto;
   }
 
   @media (max-width: 1080px) {

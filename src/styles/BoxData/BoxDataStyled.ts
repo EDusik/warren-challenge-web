@@ -18,7 +18,7 @@ export const BoxDataStyled = styled.div`
     display: flex;           
     flex-direction: column;
     line-height: 2;
-    transition: filter 0.2s;
+    transition: 0.2s;
     
     h1 {
       font-size: 1.5rem;
@@ -47,6 +47,6 @@ export const BoxDataStyled = styled.div`
   }
 
   &:hover {
-    filter: brightness(0.96);
+    background-color: var(--background);
   }
 `;
