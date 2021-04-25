@@ -6,9 +6,13 @@ export const BoxDataStyled = styled.div`
   margin: 1rem;
   min-height: 180px;
   background-color: var(--white);
+  border-radius: 12px;
 
-  a {
+  button {
     justify-content: center;
+    border: none;
+    background-color: transparent;
+    width: 100%;
     cursor: pointer;
     height: 100%;
     display: flex;           

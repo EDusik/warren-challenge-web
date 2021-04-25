@@ -6,6 +6,9 @@ import { ContainerStyled } from "../../styles/Container/ContainerStyled";
 import { getTransactions } from "../../services/api";
 import { currencyFormatterBrl } from "../../utils/currencyFormatter";
 
+import { GlobalContext } from "../../context/reducer";
+import { GlobalActionType } from "../../context/models";
+
 interface Transactions {
 	id: string;
 	title: string;
@@ -18,6 +21,8 @@ interface Transactions {
 }
 
 export const TableData = () => {
+	const { dispatch } = useContext(GlobalContext);
+
 	const [transactions, setTransactions] = useState<Transactions[]>([]);
 
 	useEffect(() => {
@@ -26,16 +31,23 @@ export const TableData = () => {
 		});
 	}, []);
 
+	const handleOpenDetailsModal = () => {
+		dispatch({
+			type: GlobalActionType.SET_MODAL_OPEN,
+			payload: true
+		});
+	};
+
 	return (
 		<ContainerStyled>
 			{transactions.map(transaction => (
-				<BoxDataStyled title={transaction.title}>
-					<a>
+				<BoxDataStyled title={transaction.title} key={transaction.id}>
+					<button type="button" aria-label="Open Details Details" onClick={handleOpenDetailsModal}>
 						<h1>{transaction.title}</h1>
 						<p>{transaction.description}</p>
 						<b>{transaction.status}</b>
 						<span>{currencyFormatterBrl(transaction.amount)}</span>
-					</a>
+					</button>
 				</BoxDataStyled>
 			))}
 		</ContainerStyled>
