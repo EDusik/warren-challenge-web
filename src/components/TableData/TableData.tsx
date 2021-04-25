@@ -9,29 +9,23 @@ import { currencyFormatterBrl } from "../../utils/currencyFormatter";
 import { GlobalContext } from "../../context/reducer";
 import { GlobalActionType } from "../../context/models";
 
-interface Transactions {
-	id: string;
-	title: string;
-	description: string;
-	status: string;
-	amount: number;
-	date: string;
-	from: string;
-	to: string;
-}
+import { Transaction } from "../../models/Transaction";
 
 export const TableData = () => {
 	const { dispatch } = useContext(GlobalContext);
-
-	const [transactions, setTransactions] = useState<Transactions[]>([]);
+	const [transactions, setTransactions] = useState<Transaction[]>([]);
 
 	useEffect(() => {
-		getTransactions().then(transaction => {
-			setTransactions(transaction.data);
+		getTransactions().then(transactions => {
+			setTransactions(transactions.data);
 		});
 	}, []);
 
-	const handleOpenDetailsModal = () => {
+	const handleOpenDetailsModal = (transaction: Transaction) => {
+		dispatch({
+			type: GlobalActionType.SET_SELECTED_TRANSACTION,
+			payload: transaction
+		});
 		dispatch({
 			type: GlobalActionType.SET_MODAL_OPEN,
 			payload: true
@@ -42,7 +36,13 @@ export const TableData = () => {
 		<ContainerStyled>
 			{transactions.map(transaction => (
 				<BoxDataStyled title={transaction.title} key={transaction.id}>
-					<button type="button" aria-label="Open Details Details" onClick={handleOpenDetailsModal}>
+					<button
+						type="button"
+						aria-label="Open Details Details"
+						onClick={() => {
+							handleOpenDetailsModal(transaction);
+						}}
+					>
 						<h1>{transaction.title}</h1>
 						<p>{transaction.description}</p>
 						<b>{transaction.status}</b>
