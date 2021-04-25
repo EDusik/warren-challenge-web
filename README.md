@@ -9,6 +9,7 @@ This project uses these technologies:
 - [React](https://reactjs.org/)
 - [API](https://warren-transactions-api.herokuapp.com/api/transactions)
 - [Styled Components](https://styled-components.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
 - [Axios](https://github.com/axios/axios)
 
 ## Commands
