@@ -2,14 +2,18 @@
 
 <a href="https://github.com/warrenbrasil/desafio-warren-web" target="_blank">Challenge</a> done with React for the company <a href="https://warren.com.br/" target="_blank">Warren</a>.
 
+## Endpoint
+
+- [API](https://warren-transactions-api.herokuapp.com/api/transactions)
 ## Technologies
 
 This project uses these technologies:
 
 - [React](https://reactjs.org/)
-- [API](https://warren-transactions-api.herokuapp.com/api/transactions)
 - [Styled Components](https://styled-components.com/)
 - [React Icons](https://react-icons.github.io/react-icons/)
+- [Cypress](https://www.cypress.io/)
+- [MirageJs](https://miragejs.com/)
 - [Axios](https://github.com/axios/axios)
 
 ## Commands

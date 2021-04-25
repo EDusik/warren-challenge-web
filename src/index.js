@@ -4,6 +4,11 @@ import App from "./App";
 import { GlobalContextProvider } from "./context/reducer";
 
 import GlobalStyle from "./styles/Global/Global";
+import { makeServer } from "./server";
+
+if (Window.Cypress) {
+	makeServer();
+}
 
 ReactDOM.render(
 	<React.StrictMode>
