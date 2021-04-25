@@ -1,6 +1,8 @@
 import axios from "axios";
 import { environment } from "../environments/environments";
 
+import { Transaction } from "../models/Transaction";
+
 const http = axios.create({
 	baseURL: environment.baseUrl,
 	headers: {
@@ -9,9 +11,9 @@ const http = axios.create({
 });
 
 export const getTransactions = () => {
-	return http.get("/transactions");
+	return http.get<Transaction[]>("/transactions");
 };
 
-export const getTransaction = (id: number) => {
-	return http.get(`/transactions/${id}`);
+export const getTransaction = (id: string) => {
+	return http.get<Transaction>(`/transactions/${id}`);
 };
