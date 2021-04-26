@@ -12,7 +12,7 @@ export const DetailsModalStyled = styled.div`
 	justify-content: center;
 	align-items: center;
 
-  .detailsModalBody {
+  .details-modal-body {
     background: var(--white);
     width: 100%;
     max-width: 660px;

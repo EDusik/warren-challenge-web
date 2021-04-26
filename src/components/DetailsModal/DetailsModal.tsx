@@ -16,8 +16,6 @@ export const DetailsModal = () => {
 		context.selectedTransaction as Transaction
 	);
 
-	console.log(selectedTransaction);
-
 	useEffect(() => {
 		getTransaction(context.selectedTransaction.id).then(transaction => {
 			setSelectedTransaction(transaction.data);
@@ -46,29 +44,34 @@ export const DetailsModal = () => {
 
 	return (
 		<DetailsModalStyled title={selectedTransaction.title}>
-			<div className="detailsModalBody">
-				<h1>{selectedTransaction.title}</h1>
+			<div className="details-modal-body">
+				<h1 data-testid="modal-title">{selectedTransaction.title}</h1>
 				<div className="bar">
 					<StatusBarStyled title={selectedTransaction.title}>
 						<div></div>
 					</StatusBarStyled>
 				</div>
-				<div className="status">
+				<div className="status" data-testid="modal-status">
 					<div>{setStatusBar(selectedTransaction.title)}</div>
 				</div>
-				<b>Transferido de</b>
+				<b data-testid="modal-transferred-from">Transferido de</b>
 				<hr />
-				<p>
+				<p data-testid="modal-from">
 					{selectedTransaction.from}
-					<span>{currencyFormatterBrl(selectedTransaction.amount)}</span>
+					<span data-testid="modal-amount-from">{currencyFormatterBrl(selectedTransaction.amount)}</span>
 				</p>
-				<b>Para</b>
+				<b data-testid="modal-transferred-to">Para</b>
 				<hr />
-				<p>
+				<p data-testid="modal-to">
 					{selectedTransaction.to}
-					<span>{currencyFormatterBrl(selectedTransaction.amount)}</span>
+					<span data-testid="modal-amount-to">{currencyFormatterBrl(selectedTransaction.amount)}</span>
 				</p>
-				<button type="button" aria-label="Close Details Modal" onClick={handleCloseDetailsModal}>
+				<button
+					type="button"
+					aria-label="Close Details Modal"
+					data-testid="modal-close-button"
+					onClick={handleCloseDetailsModal}
+				>
 					<CloseIcon title="Close" />
 				</button>
 			</div>
