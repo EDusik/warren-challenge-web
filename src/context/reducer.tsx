@@ -21,8 +21,16 @@ const reducer = (state = INITIAL_CONTEXT, action: GlobalAction): GlobalState => 
 	}
 };
 
-const GlobalContextProvider: React.FunctionComponent = ({ children }: any) => {
-	const [context, dispatch] = useReducer(reducer, INITIAL_CONTEXT);
+type GlobalContextProviderProps = {
+	children: React.ReactNode;
+	initialState?: GlobalState;
+};
+
+const GlobalContextProvider: React.FunctionComponent<GlobalContextProviderProps> = ({
+	children,
+	initialState
+}: any) => {
+	const [context, dispatch] = useReducer(reducer, initialState || INITIAL_CONTEXT);
 	const value = { context, dispatch } as GlobalContextProps;
 	return <GlobalContext.Provider value={value}>{children}</GlobalContext.Provider>;
 };
