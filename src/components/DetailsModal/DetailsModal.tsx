@@ -1,14 +1,16 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { GlobalActionType } from "../../context/models";
 import { GlobalContext } from "../../context/reducer";
-
-import { getTransaction } from "../../services/api";
-import { Transaction } from "../../models/Transaction";
 
 import { DetailsModalStyled } from "../../styles/DetailsModal/DetailsModalStyled";
 import { AiOutlineClose as CloseIcon } from "react-icons/ai";
 import { currencyFormatterBrl } from "../../utils/currencyFormatter";
 import { StatusBarStyled } from "../../styles/StatusBar/StatusBarStyled";
+
+import { setStatusBar } from "../../utils/modalFormatter";
+import { getTransaction } from "../../services/api";
+
+import { Transaction } from "../../models/Transaction";
 
 export const DetailsModal = () => {
 	const { context, dispatch } = useContext(GlobalContext);
@@ -27,19 +29,6 @@ export const DetailsModal = () => {
 			type: GlobalActionType.SET_MODAL_OPEN,
 			payload: false
 		});
-	};
-
-	const setStatusBar = (title: string) => {
-		switch (title) {
-			case "Resgate":
-				return <p>Solicitada</p>;
-			case "Movimentação interna":
-				return <p className="center">Processando</p>;
-			case "Depósito":
-				return <p className="right">Concluída</p>;
-			default:
-				return <p className="center">{title}</p>;
-		}
 	};
 
 	return (
