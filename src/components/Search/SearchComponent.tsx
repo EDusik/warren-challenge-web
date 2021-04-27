@@ -19,6 +19,7 @@ export const Search = () => {
 		<ContainerStyled>
 			<SearchStyled
 				type="text"
+				data-testid="search"
 				aria-label="search"
 				id="search"
 				name="search"

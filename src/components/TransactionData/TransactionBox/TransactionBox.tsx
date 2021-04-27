@@ -32,7 +32,7 @@ export const TransactionBox: React.FC<Props> = ({ data }) => {
 	return (
 		<ContainerStyled>
 			{data.map((transaction: Transaction) => (
-				<TransactionBoxStyled title={transaction.title} key={transaction.id}>
+				<TransactionBoxStyled data-testid="transaction-box" title={transaction.title} key={transaction.id}>
 					<button
 						type="button"
 						aria-label="Open Details Details"
