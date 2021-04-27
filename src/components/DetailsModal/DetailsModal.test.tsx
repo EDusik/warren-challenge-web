@@ -33,12 +33,12 @@ describe("DetailModal Component", () => {
 		const { getByTestId, getByText } = createDetailsModalComponent();
 
 		expect(getByTestId("modal-title").textContent).toBe(mockTransaction.title);
-		expect(getByTestId("modal-status").textContent).toBe("Concluída");
+		expect(getByTestId("modal-status").textContent).toBe("Solicitada");
 		expect(getByTestId("modal-transferred-from").textContent).toBe("Transferido de");
 		expect(getByText(mockTransaction.from)).toBeInTheDocument();
-		expect(getByTestId("modal-amount-from").textContent).toBe("R$ 51,668.85");
+		expect(getByTestId("modal-amount-from").textContent).toBe("R$ 2,078.66");
 		expect(getByTestId("modal-transferred-to").textContent).toBe("Para");
 		expect(getByText(mockTransaction.to)).toBeInTheDocument();
-		expect(getByTestId("modal-amount-to").textContent).toBe("R$ 51,668.85");
+		expect(getByTestId("modal-amount-to").textContent).toBe("R$ 2,078.66");
 	});
 });
