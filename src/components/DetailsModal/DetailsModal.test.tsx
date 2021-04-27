@@ -12,7 +12,11 @@ import mockTransaction from "../../mocks/transaction.json";
 describe("DetailModal Component", () => {
 	const INITIAL_CONTEXT: GlobalState = {
 		isDetailsModalOpen: false,
-		selectedTransaction: mockTransaction as Transaction
+		selectedTransaction: mockTransaction as Transaction,
+		searchValue: "",
+		sortType: "asc",
+		transactions: [] as Transaction[],
+		searchedTransactions: [] as Transaction[]
 	};
 
 	const createDetailsModalComponent = () => {
