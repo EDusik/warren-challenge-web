@@ -60,6 +60,7 @@ export default createGlobalStyle`
     --background: #F5F6FA;
     --primary: #E02B57;
     --title: #2E2D33;
+    --border: #DEDEDE;
     --text: #757680;
     --dark: #1C1B1F;
     --button: #2E2D33;
