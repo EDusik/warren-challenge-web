@@ -8,6 +8,7 @@ export const SearchStyled = styled.input`
   border: none;
   width: 100%;
   font-size: 1rem;
+  transition: .2s;
 
   &:focus {
     box-shadow: 1px 1px 8px 1px var(--border);
