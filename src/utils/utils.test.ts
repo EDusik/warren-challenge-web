@@ -5,7 +5,7 @@ import transactionsMockAsc from "../mocks/transactionsAsc.json";
 import transactionMock from "../mocks/transaction.json";
 import duplicatedTransactionsMock from "../mocks/duplicatedTransactions.json";
 
-describe("Utils Unit Tests", () => {
+describe("Utils Unit", () => {
 	it("should sortTransactionsAsc(transactionsMockDesc) return transactionMockAsc", () => {
 		expect(sortTransactionsAsc(transactionsMockDesc)).toStrictEqual(transactionsMockAsc);
 	});
