@@ -48,7 +48,6 @@ export const TransactionBox: React.FC<Props> = ({ data }) => {
 							</p>
 							<time data-testid="transaction-data">{dateFormatter(transaction.date)}</time>
 						</div>
-
 						<span data-testid="transaction-amount">{currencyFormatterBrl(transaction.amount)}</span>
 					</button>
 				</TransactionBoxStyled>

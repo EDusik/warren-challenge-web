@@ -19,6 +19,7 @@ describe("Home - Cypress Integration Test", async () => {
 		cy.get("h1").should("contain", transactions[0].title);
 		cy.get("p").should("contain", transactions[0].description);
 		cy.get("b").should("contain", transactions[0].status);
+		cy.get("time").should("contain", "22/12/2018");
 		cy.get("span").should("contain", "R$ 2.078,66");
 	});
 
@@ -29,6 +30,7 @@ describe("Home - Cypress Integration Test", async () => {
 		cy.get("h1").should("contain", transactions[1].title);
 		cy.get("p").should("contain", transactions[1].description);
 		cy.get("b").should("contain", transactions[1].status);
+		cy.get("time").should("contain", "23/07/2017");
 		cy.get("span").should("contain", "R$ 148.856,29");
 	});
 
@@ -39,6 +41,7 @@ describe("Home - Cypress Integration Test", async () => {
 		cy.get("h1").should("contain", transactions[2].title);
 		cy.get("p").should("contain", transactions[2].description);
 		cy.get("b").should("contain", transactions[2].status);
+		cy.get("time").should("contain", "25/08/2016");
 		cy.get("span").should("contain", "R$ 25.092,8");
 	});
 
