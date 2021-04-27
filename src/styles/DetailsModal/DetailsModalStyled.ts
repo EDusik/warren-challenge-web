@@ -27,6 +27,7 @@ export const DetailsModalStyled = styled.div`
     }
 
     h1 { 
+      font-weight: 400;
       color: ${props =>
 				props.title === "Movimentação interna" ? "#0D81FF" : props.title === "Depósito" ? "#1BBC58" : "#FF9A0D"};
     }

@@ -4,7 +4,7 @@ export const TransactionBoxStyled = styled.div`
   flex: 1 1 19rem;
   padding: 1rem;
   margin: 1rem;
-  min-height: 180px;
+  height: 200px;
   background-color: var(--white);
   border-radius: 12px;
 
@@ -31,6 +31,7 @@ export const TransactionBoxStyled = styled.div`
       font-size: 1rem;
       font-weight: 400;
       color: var(--text);
+      text-align: justify;
     }
 
     b {
@@ -44,9 +45,15 @@ export const TransactionBoxStyled = styled.div`
       font-weight: 400;
       color: var(--dark);
     }
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
   }
 
   &:hover {
-    background-color: var(--background);
+    box-shadow: 1px 1px 8px 1px var(--border);
   }
 `;
