@@ -7,8 +7,12 @@ export const FooterStyled = styled.div`
   padding: 1rem;
   width: 100%;
   text-align: center;
+  filter: 0.2s;
 
-  span {
+  a {
     font-weight: 600;
+    &:hover {
+      filter: brightness(0.8);
+    }
   }
 `;

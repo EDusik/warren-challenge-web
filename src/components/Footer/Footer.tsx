@@ -5,7 +5,10 @@ export const Footer = () => {
 	return (
 		<ContainerStyled>
 			<FooterStyled data-testid="footer">
-				Develop by 👨‍💻 <b>Eduardo Dusik</b>
+				Develop by 👨‍💻{" "}
+				<a href="https://github.com/EDusik" rel="noreferrer" target="_blank" data-testid="footer-anchor">
+					Eduardo Dusik
+				</a>
 			</FooterStyled>
 		</ContainerStyled>
 	);
