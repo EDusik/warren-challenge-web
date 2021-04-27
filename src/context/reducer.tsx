@@ -6,7 +6,7 @@ import { GlobalAction, GlobalActionType, GlobalContextProps, GlobalState } from 
 export const INITIAL_CONTEXT: GlobalState = {
 	isDetailsModalOpen: false,
 	searchValue: "",
-	sortType: "asc",
+	sortType: "desc",
 	selectedTransaction: {} as Transaction,
 	transactions: [] as Transaction[],
 	searchedTransactions: [] as Transaction[]

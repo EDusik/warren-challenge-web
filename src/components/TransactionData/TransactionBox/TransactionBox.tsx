@@ -9,6 +9,7 @@ import { GlobalActionType } from "../../../context/models";
 import { Transaction } from "../../../models/Transaction";
 
 import { ContainerStyled } from "../../../styles/Container/ContainerStyled";
+import { dateFormatter } from "../../../utils/dateFormatter";
 
 interface Props {
 	data: Transaction[];
@@ -41,7 +42,13 @@ export const TransactionBox: React.FC<Props> = ({ data }) => {
 					>
 						<h1 data-testid="transaction-title">{transaction.title}</h1>
 						<p data-testid="transaction-description">{transaction.description}</p>
-						<b data-testid="transaction-status">{transaction.status}</b>
+						<div>
+							<p data-testid="transaction-status">
+								status: <b>{transaction.status}</b>
+							</p>
+							<time>{dateFormatter(transaction.date)}</time>
+						</div>
+
 						<span data-testid="transaction-amount">{currencyFormatterBrl(transaction.amount)}</span>
 					</button>
 				</TransactionBoxStyled>
