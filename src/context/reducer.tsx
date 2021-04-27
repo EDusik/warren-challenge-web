@@ -5,7 +5,11 @@ import { GlobalAction, GlobalActionType, GlobalContextProps, GlobalState } from 
 
 export const INITIAL_CONTEXT: GlobalState = {
 	isDetailsModalOpen: false,
-	selectedTransaction: {} as Transaction
+	searchValue: "",
+	sortType: "asc",
+	selectedTransaction: {} as Transaction,
+	transactions: [] as Transaction[],
+	searchedTransactions: [] as Transaction[]
 };
 
 const GlobalContext = createContext({} as GlobalContextProps);
@@ -14,8 +18,16 @@ const reducer = (state = INITIAL_CONTEXT, action: GlobalAction): GlobalState => 
 	switch (action.type) {
 		case GlobalActionType.SET_MODAL_OPEN:
 			return { ...state, isDetailsModalOpen: action.payload };
+		case GlobalActionType.SET_SEARCH_VALUE:
+			return { ...state, searchValue: action.payload };
+		case GlobalActionType.SET_SORT_TYPE:
+			return { ...state, sortType: action.payload };
 		case GlobalActionType.SET_SELECTED_TRANSACTION:
 			return { ...state, selectedTransaction: action.payload };
+		case GlobalActionType.SET_TRANSACTIONS:
+			return { ...state, transactions: action.payload };
+		case GlobalActionType.SET_SEARCHED_TRANSACTIONS:
+			return { ...state, searchedTransactions: action.payload };
 		default:
 			throw new Error(`Unsupported action type: ${action}`);
 	}
