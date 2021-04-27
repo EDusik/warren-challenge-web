@@ -6,7 +6,7 @@ import { GlobalContextProvider } from "./context/reducer";
 import GlobalStyle from "./styles/Global/Global";
 import { makeServer } from "./server";
 
-if (Window.Cypress) {
+if ((window as any).Cypress) {
 	makeServer();
 }
 
