@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import { BoxDataStyled } from "../../../styles/BoxData/BoxDataStyled";
+import { TransactionBoxStyled } from "../../../styles/TransactionBox/TransactionBoxStyled";
 import { currencyFormatterBrl } from "../../../utils/currencyFormatter";
 
 import { GlobalContext } from "../../../context/reducer";
@@ -14,7 +14,7 @@ interface Props {
 	data: Transaction[];
 }
 
-export const TableBox: React.FC<Props> = ({ data }) => {
+export const TransactionBox: React.FC<Props> = ({ data }) => {
 	const { dispatch } = useContext(GlobalContext);
 
 	const handleOpenDetailsModal = (transaction: Transaction) => {
@@ -31,7 +31,7 @@ export const TableBox: React.FC<Props> = ({ data }) => {
 	return (
 		<ContainerStyled>
 			{data.map((transaction: Transaction) => (
-				<BoxDataStyled title={transaction.title} key={transaction.id}>
+				<TransactionBoxStyled title={transaction.title} key={transaction.id}>
 					<button
 						type="button"
 						aria-label="Open Details Details"
@@ -44,7 +44,7 @@ export const TableBox: React.FC<Props> = ({ data }) => {
 						<b data-testid="transaction-status">{transaction.status}</b>
 						<span data-testid="transaction-amount">{currencyFormatterBrl(transaction.amount)}</span>
 					</button>
-				</BoxDataStyled>
+				</TransactionBoxStyled>
 			))}
 		</ContainerStyled>
 	);

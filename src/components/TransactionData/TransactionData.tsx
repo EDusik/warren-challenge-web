@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import { getTransactions } from "../../services/api";
 import { Transaction } from "../../models/Transaction";
 
-import { TableBox } from "./TableBox/TableBox";
+import { TransactionBox } from "./TransactionBox/TransactionBox";
 
-export const TableData = () => {
+export const TransactionData = () => {
 	const [transactions, setTransactions] = useState<Transaction[]>([]);
 
 	useEffect(() => {
@@ -14,5 +14,5 @@ export const TableData = () => {
 		});
 	}, []);
 
-	return <TableBox data={transactions} />;
+	return <TransactionBox data={transactions} />;
 };

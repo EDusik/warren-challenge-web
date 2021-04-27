@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const BoxDataStyled = styled.div`
+export const TransactionBoxStyled = styled.div`
   flex: 1 1 19rem;
   padding: 1rem;
   margin: 1rem;
