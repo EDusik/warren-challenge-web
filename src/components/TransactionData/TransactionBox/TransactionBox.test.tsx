@@ -1,18 +1,32 @@
 import { render } from "@testing-library/react";
-import { GlobalContextProvider, GlobalContextConsumer } from "../../../context/reducer";
+import { GlobalActionType, GlobalState } from "../../../context/models";
+import { GlobalContextConsumer, GlobalContext } from "../../../context/reducer";
 
 import mockTransactions from "../../../mocks/transactions.json";
+import mockTransaction from "../../../mocks/transaction.json";
+import { Transaction } from "../../../models/Transaction";
 
 import { TransactionBox } from "./TransactionBox";
 
 describe("TransactionBox Component", () => {
+	const INITIAL_CONTEXT: GlobalState = {
+		isDetailsModalOpen: false,
+		selectedTransaction: {} as Transaction,
+		searchValue: "",
+		sortType: "asc",
+		transactions: [] as Transaction[],
+		searchedTransactions: [] as Transaction[]
+	};
+
+	const dispatch = jest.fn();
 	const createTransactionBoxComponent = () => {
 		return {
 			...render(
-				<GlobalContextProvider>
+				<GlobalContext.Provider value={{ context: INITIAL_CONTEXT, dispatch }}>
 					<GlobalContextConsumer>{() => <TransactionBox data={mockTransactions} />}</GlobalContextConsumer>
-				</GlobalContextProvider>
-			)
+				</GlobalContext.Provider>
+			),
+			dispatch
 		};
 	};
 
@@ -44,5 +58,16 @@ describe("TransactionBox Component", () => {
 		expect(queryAllByTestId("transaction-status")[2].textContent).toBe(`status: ${mockTransactions[2].status}`);
 		expect(queryAllByTestId("transaction-data")[2].textContent).toBe("25/08/2016");
 		expect(queryAllByTestId("transaction-amount")[2].textContent).toBe("R$ 25,092.8");
+	});
+
+	it("should call dispatch action SET_SELECTED_TRANSACTION and SET_MODAL_OPEN when clicked transaction-title[0]", () => {
+		const { queryAllByTestId } = createTransactionBoxComponent();
+
+		queryAllByTestId("transaction-title")[0].click();
+		expect(dispatch).toHaveBeenCalledWith({
+			"payload": mockTransaction,
+			"type": GlobalActionType.SET_SELECTED_TRANSACTION
+		});
+		expect(dispatch).toHaveBeenCalledWith({ "payload": true, "type": GlobalActionType.SET_MODAL_OPEN });
 	});
 });

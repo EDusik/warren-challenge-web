@@ -1,15 +1,14 @@
 import React, { useContext } from "react";
 
-import { TransactionBoxStyled } from "../../../styles/TransactionBox/TransactionBoxStyled";
-import { currencyFormatterBrl } from "../../../utils/currencyFormatter";
-
 import { GlobalContext } from "../../../context/reducer";
 import { GlobalActionType } from "../../../context/models";
 
-import { Transaction } from "../../../models/Transaction";
-
+import { TransactionBoxStyled } from "../../../styles/TransactionBox/TransactionBoxStyled";
 import { ContainerStyled } from "../../../styles/Container/ContainerStyled";
 import { dateFormatter } from "../../../utils/dateFormatter";
+
+import { Transaction } from "../../../models/Transaction";
+import { currencyFormatterBrl } from "../../../utils/currencyFormatter";
 
 interface Props {
 	data: Transaction[];
