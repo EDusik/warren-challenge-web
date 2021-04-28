@@ -26,7 +26,7 @@ export const SortButton = () => {
 			type="button"
 			id="sort-button"
 			name="sort-button"
-			date-testid="sort-button"
+			data-testid="sort-button"
 			aria-label="Order by"
 			onClick={handleSortData}
 		>
