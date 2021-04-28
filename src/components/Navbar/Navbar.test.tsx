@@ -5,7 +5,7 @@ import { GlobalContextConsumer, GlobalContextProvider } from "../../context/redu
 
 import { Navbar } from "./Navbar";
 
-describe("Navbar component", () => {
+describe("Navbar Component", () => {
 	const createNavbarComponent = () => {
 		return {
 			...render(

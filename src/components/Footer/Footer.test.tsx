@@ -3,7 +3,7 @@ import { render } from "@testing-library/react";
 
 import { Footer } from "./Footer";
 
-describe("Footer component", () => {
+describe("Footer Component", () => {
 	const urlGitHub = "https://github.com/EDusik";
 
 	const createFooterComponent = () => {

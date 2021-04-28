@@ -29,6 +29,10 @@ npm install
 ```npm
 npm run test
 ```
+with percentage covered
+```npm
+npm run test -- --coverage --watchAll=false
+```
 ### Run Cypress Tests
 
 ```npm
