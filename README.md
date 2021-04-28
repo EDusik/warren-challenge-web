@@ -7,8 +7,13 @@
 ## Preview
 <div align="center">
   <a href="https://warren-challenge-web.vercel.app/" target="_blank">
-    <img alt="Preview" src=".github/eduwarren.gif" width="100%">
+    <img alt="Preview Gif" src=".github/eduwarren.gif" width="100%">
   </a>  
+</div>
+
+## Cypress
+<div align="center">
+  <img alt="Cypress Gif" src=".github/cypress.gif" width="100%">
 </div>
 
 ## Lighthouse
