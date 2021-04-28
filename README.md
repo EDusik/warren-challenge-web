@@ -4,8 +4,16 @@
 
 - You can check the challenge done <a href="https://warren-challenge-web.vercel.app/" target="_blank">here</a>.
 
+## Preview
 <div align="center">
-  <img alt="Gif" src=".github/eduwarren.gif" width="60%">
+  <a href="https://warren-challenge-web.vercel.app/" target="_blank">
+    <img alt="Preview" src=".github/eduwarren.gif" width="100%">
+  </a>  
+</div>
+
+## Lighthouse
+<div align="center">
+  <img alt="Gif" src=".github/lighthouse.png" width="40%">
 </div>
 
 ## Endpoint [API]
