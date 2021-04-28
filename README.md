@@ -1,10 +1,17 @@
 # 📊 Warren Challenge Web
 
-<a href="https://github.com/warrenbrasil/desafio-warren-web" target="_blank">Challenge</a> done with React for the company <a href="https://warren.com.br/" target="_blank">Warren</a>.
+<a href="https://github.com/warrenbrasil/desafio-warren-web" target="_blank">Challenge</a> web done with React for the company <a href="https://warren.com.br/" target="_blank">Warren</a>.
 
-## Endpoint
+- You can check the challenge done <a href="https://warren-challenge-web.vercel.app/" target="_blank">here</a>.
 
-- [API](https://warren-transactions-api.herokuapp.com/api/transactions)
+<div align="center">
+  <img alt="Gif" src=".github/eduwarren.gif" width="60%">
+</div>
+
+## Endpoint [API]
+
+- [/transactions](https://warren-transactions-api.herokuapp.com/api/transactions)
+- [/transactions/:id](https://warren-transactions-api.herokuapp.com/api/transactions/5f89f9f257fe42957bf6dbfd)
 ## Technologies
 
 This project uses these technologies:
@@ -15,6 +22,7 @@ This project uses these technologies:
 - [Cypress](https://www.cypress.io/)
 - [MirageJs](https://miragejs.com/)
 - [Axios](https://github.com/axios/axios)
+- [Vercel](https://vercel.com/)
 
 ## Commands
 
