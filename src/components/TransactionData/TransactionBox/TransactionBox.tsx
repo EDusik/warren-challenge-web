@@ -43,7 +43,7 @@ export const TransactionBox: React.FC<Props> = ({ data }) => {
 						<p data-testid="transaction-description">{transaction.description}</p>
 						<div>
 							<p data-testid="transaction-status">
-								status: <b>{transaction.status}</b>
+								<b>{transaction.status}</b>
 							</p>
 							<time data-testid="transaction-data">{dateFormatter(transaction.date)}</time>
 						</div>
